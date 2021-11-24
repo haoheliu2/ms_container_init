@@ -25,7 +25,8 @@ pip3 uninstall -y torch
 pip install torch==1.6.0
 pip install ipdb
 sudo apt -y install psmisc
-fish
+
+echo "start ssh-key generation"
 ssh-keygen -t rsa
 cat ~/.ssh/id_rsa.pub
 git config --global user.name "haoheliu"
@@ -35,14 +36,20 @@ sudo apt install espeak
 
 cp ./conf/authorized_keys ~/.ssh/
 
+echo "Adding 64GB swap file"
+
 sudo swapon --show
 free -h
 df -h
+echo "allocating"
 sudo fallocate -l 64G /swapfile
+echo "done"
 ls -lh /swapfile
 sudo chmod 600 /swapfile
 ls -lh /swapfile
 sudo mkswap /swapfile
+echo "swap on!"
 sudo swapon /swapfile
 sudo swapon --show
 free -h
+echo "done"
