@@ -32,24 +32,25 @@ cat ~/.ssh/id_rsa.pub
 git config --global user.name "haoheliu"
 git config --global user.email "867390095@qq.com"
 pip3 install progressbar
-sudo apt install espeak
+sudo apt -y install espeak
 
 cp ./conf/authorized_keys ~/.ssh/
 
-echo "Adding 64GB swap file"
+# echo "Adding swap file"
 
-sudo swapon --show
-free -h
-df -h
-echo "allocating"
-sudo fallocate -l 64G /swapfile
-echo "done"
-ls -lh /swapfile
-sudo chmod 600 /swapfile
-ls -lh /swapfile
-sudo mkswap /swapfile
-echo "swap on!"
-sudo swapon /swapfile
-sudo swapon --show
-free -h
-echo "done"
+# sudo swapon --show
+# free -h
+# df -h
+# echo "allocating"
+# sudo dd if=/dev/zero of=~/swapfile count=1024 bs=1MiB
+# # sudo fallocate -l 32G /swapfile
+# echo "done"
+# ls -lh ~/swapfile
+# sudo chmod 600 ~/swapfile
+# ls -lh ~/swapfile
+# sudo mkswap -f ~/swapfile
+# echo "swap on!"
+# sudo swapon ~/swapfile
+# sudo swapon --show
+# free -h
+# echo "done"
