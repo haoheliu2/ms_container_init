@@ -27,7 +27,8 @@ pip install ipdb
 sudo apt -y install psmisc
 
 echo "start ssh-key generation"
-ssh-keygen -t rsa
+# ssh-keygen -t rsa
+ssh-keygen -f id_rsa -t rsa -N ''
 cat ~/.ssh/id_rsa.pub
 git config --global user.name "haoheliu"
 git config --global user.email "867390095@qq.com"
