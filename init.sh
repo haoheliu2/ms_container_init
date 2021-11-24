@@ -28,7 +28,7 @@ sudo apt -y install psmisc
 
 echo "start ssh-key generation"
 # ssh-keygen -t rsa
-ssh-keygen -f id_rsa -t rsa -N ''
+ssh-keygen -f ~/.ssh/id_rsa -t rsa -N ''
 cat ~/.ssh/id_rsa.pub
 git config --global user.name "haoheliu"
 git config --global user.email "867390095@qq.com"
@@ -51,6 +51,7 @@ cp ./conf/authorized_keys ~/.ssh/
 # ls -lh ~/swapfile
 # sudo mkswap -f ~/swapfile
 # echo "swap on!"
+# # Error
 # sudo swapon ~/swapfile
 # sudo swapon --show
 # free -h
