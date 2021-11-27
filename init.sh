@@ -28,13 +28,12 @@ sudo apt -y install psmisc
 
 echo "start ssh-key generation"
 # ssh-keygen -t rsa
-ssh-keygen -f ~/.ssh/id_rsa -t rsa -N ''
 cat ~/.ssh/id_rsa.pub
 git config --global user.name "haoheliu"
 git config --global user.email "867390095@qq.com"
 pip3 install progressbar
 sudo apt -y install espeak
-
+sudo apt -y install rsync grsync
 cp ./conf/authorized_keys ~/.ssh/
 
 # echo "Adding swap file"
