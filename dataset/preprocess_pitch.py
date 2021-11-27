@@ -37,7 +37,7 @@ from tqdm import tqdm
 for file in os.listdir(os.path.join("dataset/filelists")): 
     print(file)
     if("pitch" in file):
-        for each in tqdm(read_list(os.path.join("filelists",file))): 
+        for each in tqdm(read_list(os.path.join("dataset/filelists",file))): 
             pitch_path = each.split("|")[-1]
             f0, uv = get_pitch(pitch_path)
             np.save(os.path.join(os.path.dirname(pitch_path), "interp_"+os.path.basename(pitch_path)),f0)
