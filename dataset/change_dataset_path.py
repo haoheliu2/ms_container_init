@@ -19,5 +19,5 @@ for file in os.listdir("filelists"):
     if("ljs" in file):
         f_list = read_list(os.path.join("filelists",file))
         for i in range(len(f_list)):
-            f_list[i] = f_list[i].replace("/blob/v-jcong","~")
+            f_list[i] = f_list[i].replace("~","/home/v-haoheliu")
         write_list(f_list,os.path.join("filelists",file))

@@ -42,9 +42,6 @@ for file in os.listdir(os.path.join("filelists")):
             f0, uv = get_pitch(pitch_path)
             np.save("interp_"+os.path.basename(pitch_path),f0)
             np.save("uv_"+os.path.basename(pitch_path),uv)
-        
-            
-            
             
 
         
