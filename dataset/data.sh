@@ -7,4 +7,5 @@ echo "Copying LJSpeech-1.1 pitch dataset"
 cp -r /blob/v-jcong/data/LJSpeech-1.1-fs2/f0 ~/data/LJSpeech-1.1-fs2
 echo "Done"
 cp -r ~/ms_container_init/dataset/filelists ~
+python3 dataset/preprocess_pitch.py
 echo "Success!"
