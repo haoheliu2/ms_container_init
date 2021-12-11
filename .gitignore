@@ -1,2 +1,4 @@
 .DS*
 .vscode
+__pycache__
+average_optimal*

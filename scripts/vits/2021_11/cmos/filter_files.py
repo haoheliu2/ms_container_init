@@ -15,11 +15,13 @@ import os
 CMOS_UTTERRANCE=20
 
 # Model total output
-# source_path = "/Users/liuhaohe/Listener_test/vits/ljs_exp14/output_36104000"
-source_path = "/Users/liuhaohe/Listener_test/vits/output_1160000"
+# source_path = "/Users/liuhaohe/Downloads/T3"
+source_path = "/Users/liuhaohe/Downloads/output_3617000"
+# source_path = "/Users/liuhaohe/OneDrive - Microsoft/CMOS/VITS/GroundTruth"
 # Filtered output path
-# target_path = "/Users/liuhaohe/OneDrive - Microsoft/CMOS/VITS/20-2021-11-25-ljs_exp14/exp14_soft_dtw"
-target_path = "/Users/liuhaohe/OneDrive - Microsoft/CMOS/VITS/20-2021-11-25-ljs_exp14/baseline_116000"
+target_path = "/Users/liuhaohe/OneDrive - Microsoft/CMOS/exps/ljs_exp16_reverse"
+# target_path = "/Users/liuhaohe/OneDrive - Microsoft/CMOS/VITS/20-2021-11-25-ljs_exp14/baseline_116000"
+# target_path = "/Users/liuhaohe/OneDrive - Microsoft/CMOS/VITS/20-2021-12-01-gt-z/baseline_gt"
 # Do not need to change
 filenames_path = "/Users/liuhaohe/OneDrive - Microsoft/CMOS/VITS/FileNames"
 
@@ -35,7 +37,7 @@ with open(os.path.join(filenames_path,str(CMOS_UTTERRANCE)+".txt")) as f:
     for i, line in enumerate(f.readlines()):
         line = line.strip()
         src_fname = os.path.join(source_path, find_file(line))
-        cmd = "cp %s \'%s\'" % (src_fname, os.path.join(target_path, "%04d.wav" % (i+1)))
+        cmd = "cp \'%s\' \'%s\'" % (src_fname, os.path.join(target_path, "%04d.wav" % (i+1)))
         print(cmd)
         os.system(cmd)
 
